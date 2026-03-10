@@ -12,9 +12,19 @@ p {
     color: #121212;
 }
 
+img {
+    width: 100%;
+}
+
 h2 {
     padding-bottom: 30px;
     font-size: 18px;
+}
+
+h3 {
+    font-size: 30px;
+    line-height: 41px;
+    color: #121212;
 }
 
 section {
@@ -70,4 +80,68 @@ section {
     background-color: #AD1818;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* PROJECTS */
+
+.projects-wrapper {
+    display: flex;
+    padding-bottom: 90px;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project__link {
+    font-size: 20px;
+    color: #AD1818;
+}
+
+.projects__btn {
+    padding: 56px 0;
+    width: 100%;
+    font-size: 30px;
+    line-height: 41px;
+    color: #AD1818;
+    background-color: transparent;
+    border: 1px solid #AD1818;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.projects__btn:hover {
+    color: #FFFFFF;
+    background-color: #AD1818;
+}
+
+/* SERVICES */
+
+.services {
+    padding: 150px 0;
+    background-color: #121212;
+}
+
+.services__title {
+    color: #FFFFFF;
+}
+
+.services-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.service__title {
+    color: #FFFFFF;
 }
