@@ -2,6 +2,10 @@ body {
     font-family: "Manrope", sans-serif;
 }
 
+.body__fixed {
+    overflow: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -44,8 +48,10 @@ section {
 }
 
 .header__wrapper {
+    position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
@@ -71,6 +77,96 @@ section {
 .header__link:hover {
     opacity: 0.5;
     border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.burger-btn {
+    display: none;
+}
+
+.burger {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    background-color: rgb(0, 0, 0, 0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.burger__open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.burger__content {
+    width: 60%;
+    height: 100%;
+    padding: 80px 30px;
+    overflow-y: auto;
+    background-color: #FFFFFF;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.burger__open .burger__content {
+    transform: translateX(0);
+}
+
+.burger-header__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.burger-logo {
+    max-width: 156px;
+    max-height: 26px;
+}
+
+.burger-header__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.burger-header__link {
+    font-size: 25px;
+    line-height: 100%;
+    color: #121212;
+}
+
+.burger-header__link:hover {
+    opacity: 0.5;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.burger-header__contact {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.burger-header__contact-text {
+    font-size: 16px;
+    line-height: 100%;
+    opacity: 0.5;
+}
+
+.burger-header__contacts-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.burger-contact__text {
+    font-size: 20px;
+    line-height: 100%;
 }
 
 /* HERO */
@@ -103,7 +199,8 @@ section {
 /* ABOUT */
 
 .about__text {
-    padding-bottom: 30px;
+    margin-bottom: 30px;
+    max-width: 1048px;
     font-size: 45px;
     line-height: 61px;
 }
@@ -148,6 +245,7 @@ section {
     border: 1px solid #AD1818;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .projects__btn:hover {
@@ -210,6 +308,95 @@ section {
     cursor: pointer;
 }
 
+/* POPUP */
+
+.popup {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup__open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__content {
+    position: relative;
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 95px 75px 85px 60px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.popup__close-btn {
+    position: absolute;
+    right: 35px;
+    top: 35px;
+    width: 30px;
+    height: 30px;
+    background-image: url(../resurs/close.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.popup__title {
+    font-size: 45px;
+    text-align: center;
+}
+
+.popup__text {
+    padding-top: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.popup__form {
+    padding: 60px 0 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.popup__input {
+    padding-bottom: 10px;
+    font-size: 25px;
+    line-height: 100%;
+    border: none;
+    border-bottom: 2px solid #121212;
+    opacity: 0.5;
+}
+
+.popup__input:focus {
+    outline: none;
+}
+
+.popup__btn {
+    width: 100%;
+    padding: 20px 0;
+    font-size: 20px;
+    line-height: 100%;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #AD1818;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /* REVIEWS */
 
 .reviews__wrapper {
@@ -225,6 +412,7 @@ section {
 
 .review {
     display: flex;
+    max-width: 530px;
     flex-direction: column;
     gap: 15px;
 }
@@ -237,7 +425,6 @@ section {
     font-size: 22px;
     line-height: 100%;
 }
-
 
 /* GALLERY*/
 
@@ -455,6 +642,36 @@ section {
         max-width: 928px;
     }
 
+    /* HEADER */
+
+    .logo {
+        height: 21px;
+    }
+
+    .header__menu {
+        display: none;
+    }
+
+    .burger-btn {
+        position: absolute;
+        right: 1px;
+        z-index: 110;
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-image: url(../resurs/menu.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    .burger-btn__open {
+        width: 30px;
+        height: 30px;
+        background-image: url(../resurs/close.png);
+    }
+
     /* HERO */
 
     .hero__title {
@@ -567,6 +784,13 @@ section {
     .container {
         padding: 0 13px;
         max-width: 100%;
+    }
+
+    /* HEADER */
+
+    .burger__content {
+        width: 75%;
+
     }
 
     /* HERO */
@@ -732,6 +956,38 @@ section {
 
     .footer__text {
         font-size: 13px;
+    }
+
+    /* POPUP */
+
+    .popup__content {
+        padding: 80px 16px;
+    }
+
+    .popup__close-btn {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .popup__title {
+        font-size: 25px;
+    }
+
+    .popup__text {
+        padding-top: 10px;
+        font-size: 14px;
+    }
+
+    .popup__form {
+        padding: 60px 0;
+        gap: 30px;
+    }
+
+    .popup__input {
+        font-size: 18px;
     }
 
 }

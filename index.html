@@ -19,38 +19,80 @@
 
 <body>
 
-    <!-- <header class="header">
+    <header class="header">
         <div class="container">
             <div class="header__wrapper">
                 <img src="./resurs/LOGO.png" alt="" class="logo">
 
 
-                <ul class="header__menu">
-                    <li class="header_item">
-                        <a href="#about" class="header__link active">
-                            О НАС
-                        </a>
-                    </li>
-                    <li class="header_item">
-                        <a href="#projects" class="header__link">
-                            ПРОЕКТЫ
-                        </a>
-                    </li>
-                    <li class="header_item">
-                        <a href="#services" class="header__link">
-                            УСЛУГИ
-                        </a>
-                    </li>
-                    <li class="header_item">
-                        <a href="#contacts" class="header__link">
-                            КОНТАКТЫ
-                        </a>
-                    </li>
-                </ul>
+                <nav class="header__menu">
+                    <a href="#about" class="header__link active">
+                        О НАС
+                    </a>
+
+                    <a href="#projects" class="header__link">
+                        ПРОЕКТЫ
+                    </a>
+
+                    <a href="#services" class="header__link">
+                        УСЛУГИ
+                    </a>
+
+                    <a href="#contacts" class="header__link">
+                        КОНТАКТЫ
+                    </a>
+                </nav>
+
+                <div class="js-burger-btn burger-btn"></div>
             </div>
         </div>
+    </header>
 
-    </header> -->
+    <div class="js-burger burger">
+        <div class="js-burger__content burger__content">
+            <div class="burger-header__wrapper">
+                <a href="#">
+                    <img src="./resurs/LOGO.png" alt="" class="burger-logo">
+                </a>
+
+                <nav class="burger-header__menu">
+                    <a href="#about" class="burger-header__link">
+                        О НАС
+                    </a>
+
+                    <a href="#projects" class="burger-header__link">
+                        ПРОЕКТЫ
+                    </a>
+
+                    <a href="#services" class="burger-header__link">
+                        УСЛУГИ
+                    </a>
+
+                    <a href="#contacts" class="burger-header__link">
+                        КОНТАКТЫ
+                    </a>
+                </nav>
+
+                <div class="burger-header__contact">
+                    <p class="burger-header__contact-text">для связи:</p>
+
+                    <ul class="burger-header__contacts-wrapper">
+                        <li class="burger-contacts__item">
+                            <a href="tel:+7 935  895-45-35" class="burger-contact__text">
+                                +7 935 895-45-35
+                            </a>
+                        </li>
+                        <li class="burger-contacts__item">
+                            <a href="mailto:hello@mail.com" class="burger-contact__text">
+                                hello@mail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <main>
         <section class="hero">
@@ -67,7 +109,7 @@
 
         <section class="about">
             <div class="container">
-                <h2 id="about">О НАС</h2>
+                <h2 id="about" class="about__title">О НАС</h2>
                 <p class="about__text">
                     Студия основана в 2011 году. Полностью отдаемся проектированию и реализации
                     интерьеров. К нам обращаются за уютом, индивидуальными решениями и практичностью. Находим
@@ -79,7 +121,7 @@
 
         <section class="projects">
             <div class="container">
-                <h2 id="projects">ПРОЕКТЫ</h2>
+                <h2 id="projects" class="projects__title">ПРОЕКТЫ</h2>
 
                 <ul class="projects-wrapper">
                     <li class="project">
@@ -135,15 +177,40 @@
                     </li>
                 </ul>
 
-                <button class="service__btn">
+                <button class="js-btn service__btn ">
                     Заказать услугу
                 </button>
+
+                <div class="js-popup popup ">
+                    <div class="js-popup__content popup__content">
+
+                        <h4 class="popup__title">
+                            Заказать услугу
+                        </h4>
+                        <p class="popup__text">
+                            Заполните форму, мы свяжемся с вами в течение суток
+                        </p>
+
+                        <form class="popup__form">
+                            <input type="text" placeholder="Имя" class="popup__input">
+                            <input type="email" placeholder="Электронная почта" class="popup__input">
+                            <input type="tel" placeholder="Номер телефона" class="popup__input">
+                        </form>
+
+                        <button class="popup__btn">
+                            Отправить
+                        </button>
+
+                        <div class="js-popup__close-btn popup__close-btn"></div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <section class="reviews">
             <div class="container">
-                <h2 class="reviews__title">отзывы</h2>
+                <h2 class="reviews__title">Отзывы</h2>
                 <ul class="reviews__wrapper">
                     <li class="review">
                         <h4 class="review__title">Ксения, проект 65 кв.м.</h4>
@@ -209,7 +276,7 @@
                         <div class="container">
                             <div class="slide">
                                 <h3 class="slide__title">
-                                    Проект  Двухкомнтаной квартиры в ЖК Лесной Пейзаж
+                                    Проект Двухкомнтаной квартиры в ЖК Лесной Пейзаж
                                 </h3>
                             </div>
                         </div>
@@ -260,7 +327,7 @@
 
         <section class="contacts">
             <div class="container">
-                <h2 id="contacts" class="contacts_titile">
+                <h2 id="contacts" class="contacts__title">
                     Контакты
                 </h2>
 
@@ -312,7 +379,9 @@
         </div>
     </footer>
 
-    <script src="./gallery.js"></script>
+    <script src="./js/gallery.js"></script>
+    <script src="./js/popup.js"></script>
+    <script src="./js/burger.js"></script>
 </body>
 
 </html>
